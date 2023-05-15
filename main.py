@@ -27,6 +27,12 @@ def hello_world():
     return f"Hello {name}!"
     
 
+@app.route('/api/something', methods=['POST'])
+def something():
+    # Process the request
+    response = {"result": "Hello from Python!"}
+    return jsonify(response)    
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 # [END cloudbuild_python_flask]
