@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    name = os.environ.get("NAME", "cunt")
+    name = os.environ.get("NAME", "wow")
     return f"Hello {name}!"
 
 
