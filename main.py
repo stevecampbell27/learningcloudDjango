@@ -14,6 +14,7 @@
 
 # [START cloudbuild_python_flask]
 import os
+from coinmarketcap import CoinMarketCapAPI
 
 from flask import Flask
 
@@ -22,9 +23,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    name = os.environ.get("NAME", "wow2")
-    return f"Hello {name}!"
-    return f"CUNT"
+    cm = CoinMarketCapAPI()
+    return f"cm.get_symbols()"
+    
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
