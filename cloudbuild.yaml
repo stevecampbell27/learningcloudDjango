@@ -44,7 +44,7 @@ steps:
   # [END cloudbuild_python_deploy_yaml]
   
   
-logsBucket: BUCKET_NAME
+
 
 options:
   logging: NONE
