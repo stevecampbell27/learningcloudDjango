@@ -33,3 +33,8 @@ if __name__ == "__main__":
 from Coinmarket_API_GetID import CoinMarketCapAPI
 cm = CoinMarketCapAPI()
 print(cm.get_symbols())
+
+@app.route("/hi")
+def hello_world():
+    name = os.environ.get("NAME", "wow")
+    return f"Hello {name}!"
