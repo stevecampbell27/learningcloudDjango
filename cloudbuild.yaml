@@ -50,10 +50,9 @@ steps:
   # [END cloudbuild_python_deploy_yaml]
   
   
+logsBucket: BUCKET_NAME
 
-  logsBucket: BUCKET_NAME
-
-  options:
+options:
   logging: NONE
 
 
