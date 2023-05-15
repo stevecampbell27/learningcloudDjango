@@ -23,8 +23,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    cm = CoinMarketCapAPI()
-    return cm.get_symbols()
+    name = os.environ.get("NAME", "wow")
+    return f"Hello {name}!"
     
 
 if __name__ == "__main__":
