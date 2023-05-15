@@ -14,7 +14,6 @@
 
 # [START cloudbuild_python_flask]
 import os
-from coinmarketcap import CoinMarketCapAPI
 
 from flask import Flask
 
