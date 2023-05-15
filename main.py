@@ -24,7 +24,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     cm = CoinMarketCapAPI()
-    return f"cm.get_symbols()"
+    return cm.get_symbols()
     
 
 if __name__ == "__main__":
