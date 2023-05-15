@@ -29,3 +29,7 @@ def hello_world():
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 # [END cloudbuild_python_flask]
+
+from Coinmarket_API_GetID import CoinMarketCapAPI
+cm = CoinMarketCapAPI()
+print(cm.get_symbols())

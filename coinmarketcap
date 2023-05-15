@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri May  5 17:51:35 2023
+
+@author: stevencampbell
+"""
+
+
+import requests
+
+        
+
+class CoinMarketCapAPI:
+        
+    def __init__(self):
+
+        self.url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
+        self.headers = {
+            "Accepts": "application/json",
+            "X-CMC_PRO_API_KEY": "cc0c3d25-548d-40ec-b0b5-af86b302ab27"
+        }
+    
+    def get_symbols(self):
+        
+        response = requests.get(self.url, headers=self.headers)
+        data = response.json()
+        # Extract the symbols from the data
+        symbols = {crypto["symbol"]: crypto["id"] for crypto in data["data"]}
+        return symbols
