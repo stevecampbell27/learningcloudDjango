@@ -1,12 +1,11 @@
-import random
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def generate_random_number():
-    return jsonify({'random_number': random.randint(1, 100)})
+@app.route('/', methods=['POST'])
+def run_python_function():
+    # Perform some operation here
+    return jsonify({'result': 'Python function executed successfully!'})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8080)
-
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
